@@ -1,0 +1,38 @@
+[
+    {
+        "name": "jc-plugins/jc-plugins",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/iOrchK/jc-plugins-jc-plugins.git",
+            "reference": "03dda2b74cc16442e65fb50c4eae573d5c9cdd80"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/iOrchK/jc-plugins-jc-plugins/zipball/03dda2b74cc16442e65fb50c4eae573d5c9cdd80",
+            "reference": "03dda2b74cc16442e65fb50c4eae573d5c9cdd80",
+            "shasum": ""
+        },
+        "time": "2020-03-13T01:23:50+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jorge Chable",
+                "role": "Developer"
+            }
+        ],
+        "description": "This plugin display a list of users, and show the detail by clicking one, by requesting an API of testing.",
+        "homepage": "https://github.com/iOrchK/jc-plugins-jc-plugins",
+        "keywords": [
+            "get list",
+            "module",
+            "view detail"
+        ]
+    }
+]
