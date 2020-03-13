@@ -10,7 +10,4 @@
      * Licence: GPL2
      */
     require("vendor/jc-plugins/jc-plugins/jc-plugins.php");
-
-    // $JcPluginInstance = new JcPluginClass;
-    // $JcPluginInstance->init();
 ?>
