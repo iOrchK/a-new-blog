@@ -1,9 +1,17 @@
 <?php
+    /**
+    * Plugin Name: Show User List
+    * Plugin URI: https://github.com/iOrchK
+    * Description: This is a plugin display a user list by requesting an API using the filter hook
+    * Author: Jorge Chable
+    * Version: 1.0
+    * Author URI: https://github.com/iOrchK
+    * Licence: GPL2
+    */
     add_filter("the_content", "jc_getUserList");
 
     /**
-     * Change the content in all pages and
-     * display an user list by http get from the API Url of https://jsonplaceholder.typicode.com/users
+     * Renderize a table list of users with detail on click
      */
     if (!function_exists("jc_getUserList"))
     {
@@ -20,17 +28,17 @@
 
             $json = wp_remote_get("https://jsonplaceholder.typicode.com/users");
 
-            is_wp_error($json) AND printf(
-                "Sorry, an error ocurried. {$json->get_error_code()} {$json->get_error_message()}",
-                $json->get_error_code(),
-                $json->get_error_message()
-            );
+            if (is_wp_error($json))
+            {
+                return "Request error: " . $json->get_error_code() . " " . $json->get_error_message();
+            }
 
             $p_userList = json_decode($json["body"]);
-            $content = "
+            $content .= "
                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/css/uikit.min.css'/>
 
-                <h2>JC Plugin Activated</h2>
+                <h2><b>Show User List Plugin Activated</b></h2>
+                <p>Filter Hook test from a plugin</p>
                 <table class='uk-table'>
                     <thead>
                         <tr>
