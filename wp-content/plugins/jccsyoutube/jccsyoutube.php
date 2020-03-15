@@ -22,7 +22,7 @@
     /**
      * Register widget
      */
-    add_action("widgets_init", "jc_widgetInit");
+    add_action("widgets_init", "jc_widgetYouTubeInit");
 
     /**
      * Add plugin metaboxes
@@ -85,33 +85,33 @@
     }
 
     /**
-     * Initiate widget
+     * Initialize widget
      */
-    if (!function_exists("jc_widgetInit"))
+    if (!function_exists("jc_widgetYouTubeInit"))
     {
-        function jc_widgetInit()
+        function jc_widgetYouTubeInit()
         {
-            register_widget("jc_widget");
+            register_widget("jc_widgetYouTube");
         }
     }
 
     /**
      * Widget class
      */
-    class jc_widget extends WP_Widget
+    class jc_widgetYouTube extends WP_Widget
     {
-        function jc_widget()
+        function jc_widgetYouTube()
         {
             $widget_options = array(
                 "classname" => "jc_class", // for CSS
                 "description" => "Show a youtube video from post metadata."
             );
 
-            $this->WP_Widget("jc_id", "YouTube Video", $widget_options);
+            $this->WP_Widget("jc_wyt_id", "YouTube Video", $widget_options);
         }
 
         /**
-         * Show widget form un Appereance - Widgets
+         * Show widget form in Appearence - Widgets
          */
         function form($instance)
         {
@@ -134,7 +134,7 @@
         }
 
         /**
-         * Show widget in website
+         * Show widget
          */
         function widget($instance, $args)
         {
